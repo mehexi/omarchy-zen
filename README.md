@@ -9,9 +9,17 @@ Automatically sync your [Omarchy](https://omarchy.dev) theme to [Zen Browser](ht
 - Hooks into `omarchy-theme-set-browser` so it runs on every theme switch
 - Restarts Zen automatically to apply the new theme
 
-## Screenshots
+## Preview
 
 > Switch themes in Omarchy → Zen updates automatically
+
+https://github.com/mehexi/omarchy-zen/assets/preview.mp4
+
+## Screenshots
+
+![](assets/1.png)
+![](assets/2.png)
+![](assets/3.png)
 
 ## Requirements
 
