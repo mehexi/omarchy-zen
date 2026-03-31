@@ -13,7 +13,19 @@ SCRIPT_NAME="omarchy-theme-set-zen"
 
 echo "→ Installing omarchy-zen..."
 
-# ── 1. Find Zen profile ────────────────────────────────────────────────────────
+# ── 1. Find Zen config + profile ────────────────────────────────────────────────────────
+for CANDIDATE in "$HOME/.config/zen" "$HOME/.zen"; do
+  if [[ -f "$CANDIDATE/installs.ini" ]]; then
+    ZEN_CONFIG="$CANDIDATE"
+  fi
+done
+
+if [[ -z  "$ZEN_CONFIG" ]]; then
+  echo "x Could not find Zen installs.ini"
+  echo "  Checked: $HOME/.config/zen and $HOME/.zen"
+  exit 1
+fi
+
 ZEN_PROFILE=$(grep 'Default=' "$ZEN_CONFIG/installs.ini" 2>/dev/null \
   | head -1 | cut -d= -f2)
 
